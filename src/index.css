@@ -13,6 +13,7 @@ html {
 body {
   color: var(--text-primary);
   font-size: var(--font-size);
+   font-family: "Roboto", sans-serif;
 }
 
 :root {
