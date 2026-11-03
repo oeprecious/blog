@@ -1,0 +1,18 @@
+.navLinks ul {
+  display: flex;
+  gap: 3rem;
+}
+
+.navLinks ul li {
+  list-style: none;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--secondary-bg);
+  width: 100vw;
+  color: var(--text-secondary);
+  height: 10vh;
+}
