@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--text-primary);
+  font-size: var(--font-size);
+}
+
+:root {
+  --text-primary: black;
+  --text-secondary: white;
+  --primary-bg: black;
+  --secondary-bg: white;
+  --font-size: 1.8rem;
+}
