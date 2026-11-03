@@ -1,4 +1,5 @@
 import "./Navbar.css"
+import { MenuIcon, Moon } from "lucide-react"
 
 const Navbar = () => {
     return (
@@ -15,16 +16,17 @@ const Navbar = () => {
                         <li>Home</li>
                         <li>Topics</li>
                         <li>About</li>
-                        <li>Write post</li>
+
+                        <div className="darkMoodBtn">
+                            <Moon size={30} />
+                        </div>
+
+                        <div className="menuIcon_writePost">
+                            <p>Write post</p>
+                            <MenuIcon size={30} id="menuIcon" />
+                        </div>
                     </ul>
-
-                    <div className="navIcons">
-
-                    </div>
                 </nav>
-
-
-
             </div>
 
         </>

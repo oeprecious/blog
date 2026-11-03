@@ -1,6 +1,8 @@
 .navLinks ul {
   display: flex;
   gap: 3rem;
+  align-items: center;
+  cursor: pointer;
 }
 
 .navLinks ul li {
@@ -9,10 +11,28 @@
 
 .navItems {
   display: flex;
-  align-items: center;
-  padding: 2rem;
+  align-items: center !important;
+  justify-content: space-around;
   background-color: var(--secondary-bg);
   width: 100vw;
   color: var(--text-secondary);
   height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.menuIcon_writePost p {
+  display: inline-block;
+}
+
+.menuIcon_writePost {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+#menuIcon {
+  display: none;
 }
