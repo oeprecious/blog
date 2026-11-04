@@ -3,11 +3,26 @@ import Navbar from './Components/Navbar'
 import { useState } from 'react'
 
 const App = () => {
-  const [darkMood, setDarkMood] = useState(false)
 
+  const usersavedTheme = localStorage.getItem("theme")
+
+  let initialMood = false
+  if (usersavedTheme === "black") {
+    initialMood = true
+  } else {
+    initialMood = false
+  }
+
+  const [darkMood, setDarkMood] = useState(initialMood)
 
   const handleClick1 = () => {
     setDarkMood(!darkMood)
+
+    if (darkMood === false) {
+      localStorage.setItem("theme", "black")
+    } else {
+      localStorage.setItem("theme", "white")
+    }
   }
 
   let backgroundColor = ""
