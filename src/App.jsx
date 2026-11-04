@@ -5,7 +5,7 @@ import Home from "./Pages/Home"
 import About from "./Pages/About"
 import Topics from "./Pages/Topics"
 import WritePost from "./Pages/WritePost"
-import { Routes, Route, Link } from 'react-router'
+import { Routes, Route } from 'react-router'
 
 const App = () => {
 
@@ -42,6 +42,13 @@ const App = () => {
 
       <div style={{ backgroundColor: backgroundColor, minHeight: "100vh" }} >
         <Navbar handleClick1={handleClick1} />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/topics" element={<Topics />} />
+          <Route path="/writePost" element={<WritePost />} />
+        </Routes>
       </div>
 
     </>
