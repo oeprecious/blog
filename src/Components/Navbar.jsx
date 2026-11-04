@@ -1,7 +1,9 @@
+
 import "./Navbar.css"
 import { MenuIcon, Moon } from "lucide-react"
 
-const Navbar = () => {
+const Navbar = ({handleClick1, backgroundColor}) => {
+
     return (
         <>
 
@@ -18,7 +20,7 @@ const Navbar = () => {
                         <li>About</li>
 
                         <div className="darkMoodBtn">
-                            <Moon size={30} />
+                            <Moon size={30} onClick={handleClick1} className={backgroundColor} />
                         </div>
 
                         <div className="menuIcon_writePost">

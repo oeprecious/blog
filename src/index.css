@@ -22,4 +22,10 @@ body {
   --primary-bg:  white;
   --secondary-bg: black;
   --font-size: 1.8rem;
+  --btn-primary-bg: #8D90F7;
+}
+
+.dark {
+  background-color: var(--secondary-bg);
+  color: var(--text-secondary);
 }
