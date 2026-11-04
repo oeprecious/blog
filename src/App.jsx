@@ -1,6 +1,11 @@
 import './App.css'
 import Navbar from './Components/Navbar'
 import { useState } from 'react'
+import Home from "./Pages/Home"
+import About from "./Pages/About"
+import Topics from "./Pages/Topics"
+import WritePost from "./Pages/WritePost"
+import { Routes, Route, Link } from 'react-router'
 
 const App = () => {
 
@@ -38,6 +43,7 @@ const App = () => {
       <div style={{ backgroundColor: backgroundColor, minHeight: "100vh" }} >
         <Navbar handleClick1={handleClick1} />
       </div>
+
     </>
   )
 }
