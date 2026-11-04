@@ -1,0 +1,37 @@
+.heroContainer {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 4rem;
+}
+
+#heroImage {
+  width: 85rem;
+  height: 40rem;
+  display: block;
+  object-fit: cover;
+}
+
+.headingText p {
+  line-height: 1.7;
+}
+
+.subHeading {
+  margin-top: 1.5rem;
+}
+
+.subHeading p {
+  color: gray;
+}
+
+.author {
+  color: gray;
+}
+
+.readPost p {
+  color: #3c42f7dc;
+  cursor: pointer;
+}
+
+.heroIntroText p {
+    color:  #3c42f7dc;
+}

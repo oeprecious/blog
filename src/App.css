@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=Mate+SC&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=Mate+SC&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 .appWrapper {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .appMain {
-    flex: 1;
+  flex: 1;
+}
+
+section {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 2rem;
 }
