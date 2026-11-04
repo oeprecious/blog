@@ -40,15 +40,18 @@ const App = () => {
   return (
     <>
 
-      <div style={{ backgroundColor: backgroundColor, minHeight: "100vh" }} >
+      <div style={{ backgroundColor: backgroundColor }} className="appWrapper">
+        
         <Navbar handleClick1={handleClick1} />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/topics" element={<Topics />} />
-          <Route path="/writePost" element={<WritePost />} />
-        </Routes>
+        <main className="appMain">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/topics" element={<Topics />} />
+            <Route path="/writePost" element={<WritePost />} />
+          </Routes>
+        </main>
       </div>
 
     </>
