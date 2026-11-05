@@ -9,6 +9,7 @@
   height: 40rem;
   display: block;
   object-fit: cover;
+   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .headingText p {
