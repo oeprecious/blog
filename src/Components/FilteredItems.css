@@ -12,9 +12,16 @@
   border-radius: 5rem;
   cursor: pointer;
   color: var(--text-secondary);
+  transition: background-color 0.3s ease;
+  font-weight: 600;
 }
 
 #blue {
   background-color: var(--tertairy-color);
   color: white;
+}
+
+.active {
+  background-color: var(--tertairy-color);
+  color: white !important;
 }

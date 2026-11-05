@@ -5,7 +5,7 @@ import card3Image from "../assets/images/localStorage.png"
 
 const FeaturedCardImages = () => {
 
-    const featuredCard = [{ id: 1, techStack: "Css", heading: "Making a navbar fixed on mobile", cardPara: "Why fixed worked on desktop but not on phones.", date: "Oct 31 • 3 min read", cardImage: card1Image },
+    const featuredCard = [{ id: 1, techStack: "CSS", heading: "Making a navbar fixed on mobile", cardPara: "Why fixed worked on desktop but not on phones.", date: "Oct 31 • 3 min read", cardImage: card1Image },
 
     { id: 2, techStack: "FIGMA", heading: "From wireframe to React in four steps", cardPara: "How I took Lume Jewels from design to code.", date: "Oct 31 • 3 min read", cardImage: card2Image },
 

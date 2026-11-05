@@ -8,7 +8,7 @@
 .featuredCardContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 2rem;
   margin-top: 3rem;
 }
 

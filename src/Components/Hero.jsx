@@ -24,7 +24,7 @@ const Hero = () => {
                         </div>
 
                         <div className="author">
-                            <p>Precious &bull; Oct 31 &bull; 4min read</p>
+                            <p>Precious &bull; Oct 31 &bull; 4 min read</p>
                         </div>
 
                         <div className="readPost">
