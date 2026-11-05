@@ -7,7 +7,7 @@ const FilteredItems = ({ activeTopic, setActiveTopic }) => {
 
             <div className="filteredContainer">
                 <div className="filteredCard">
-                    <span id="blue" onClick={() => { setActiveTopic("All") }} className={activeTopic === "All" ? "active" : ""}>All</span>
+                    <span onClick={() => { setActiveTopic("All") }} className={activeTopic === "All" ? "active" : ""}>All</span>
                     <span onClick={() => { setActiveTopic("HTML") }} className={activeTopic === "HTML" ? "active" : ""}>HTML</span>
                     <span onClick={() => { setActiveTopic("CSS") }} className={activeTopic === "CSS" ? "active" : ""}>CSS</span>
                     <span onClick={() => { setActiveTopic("JAVASCRIPT") }} className={activeTopic === "JAVASCRIPT" ? "active" : ""}>JAVASCRIPT</span>

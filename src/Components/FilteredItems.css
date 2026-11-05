@@ -16,11 +16,6 @@
   font-weight: 600;
 }
 
-#blue {
-  background-color: var(--tertairy-color);
-  color: white;
-}
-
 .active {
   background-color: var(--tertairy-color);
   color: white !important;
