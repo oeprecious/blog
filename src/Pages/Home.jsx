@@ -15,7 +15,7 @@ const Home = () => {
             <div className="homeCard">
                <Hero/>
                <FilteredItems activeTopic={activeTopic} setActiveTopic={setActiveTopic}/>
-            <FeaturedCard/>
+            <FeaturedCard activeTopic={activeTopic}/>
             </div>
             
         </div>
