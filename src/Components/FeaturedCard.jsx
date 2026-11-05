@@ -3,7 +3,7 @@ import card1Image from "../assets/images/css.png"
 import card2Image from "../assets/images/wireframe.png"
 import card3Image from "../assets/images/localStorage.png"
 
-const FeaturedCardImages = () => {
+const FeaturedCardImages = ({ activeTopic }) => {
 
     const featuredCard = [{ id: 1, techStack: "CSS", heading: "Making a navbar fixed on mobile", cardPara: "Why fixed worked on desktop but not on phones.", date: "Oct 31 • 3 min read", cardImage: card1Image },
 
@@ -11,11 +11,14 @@ const FeaturedCardImages = () => {
 
     { id: 3, techStack: "JAVASCRIPT", heading: "A beginner guide to localStorage", cardPara: "Saving notes in the browser so they stay after a refresh", date: "Oct 31 • 4 min read", cardImage: card3Image }]
 
+
+    const filteredCard = activeTopic === "All" ? featuredCard : featuredCard.filter((item) => item.techStack === activeTopic)
+
     return (
         <>
 
             <div className="featuredCardContainer">
-                {featuredCard.map((images) => (
+                {filteredCard.map((images) => (
                     <div className="imageCard" key={images.id}>
                         <img src={images.cardImage} alt={images.heading} className="headingImages" />
                         <div className="imageContent">
@@ -25,10 +28,8 @@ const FeaturedCardImages = () => {
                             <p className="gray">{images.date}</p>
                         </div>
                     </div>
-                ))}
+                ))}              
             </div>
-
-
         </>
     )
 }
