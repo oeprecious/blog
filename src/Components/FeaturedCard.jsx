@@ -28,7 +28,8 @@ const FeaturedCardImages = ({ activeTopic }) => {
                             <p className="gray">{images.date}</p>
                         </div>
                     </div>
-                ))}              
+                ))}          
+                 {filteredCard.length === 0 && <p>No posts in this topic yet.</p>}    
             </div>
         </>
     )
