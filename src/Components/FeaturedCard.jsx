@@ -17,7 +17,7 @@ const FeaturedCardImages = () => {
             <div className="featuredCardContainer">
                 {featuredCard.map((images) => (
                     <div className="imageCard" key={images.id}>
-                        <img src={images.cardImage} alt={card1Image} className="headingImages" />
+                        <img src={images.cardImage} alt={images.heading} className="headingImages" />
                         <div className="imageContent">
                             <p className="stack">{images.techStack}</p>
                             <h3>{images.heading}</h3>
