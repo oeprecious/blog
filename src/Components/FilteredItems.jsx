@@ -8,9 +8,9 @@ const FilteredItems = () => {
                     <span id="blue">All</span>
                     <span>HTML</span>
                     <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>React</span>
-                    <span>Figma</span>
+                    <span>JAVASCRIPT</span>
+                    <span>REACT</span>
+                    <span>FIGMA</span>
                 </div>
             </div>
         </>
