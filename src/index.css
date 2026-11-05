@@ -18,11 +18,12 @@ body {
 
 :root {
   --text-primary: black;
-  --text-secondary: white;
+  --text-secondary: gray;
   --primary-bg:  white;
   --secondary-bg: black;
   --font-size: 1.8rem;
   --btn-primary-bg: #8D90F7;
+  --tertairy-color: #3c42f7dc;
 }
 
 .dark {

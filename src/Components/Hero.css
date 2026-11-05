@@ -20,18 +20,22 @@
 }
 
 .subHeading p {
-  color: gray;
+  color: var(--text-secondary);
 }
 
 .author {
-  color: gray;
+  color: var(--text-secondary);
 }
 
 .readPost p {
-  color: #3c42f7dc;
+  color: var(--tertairy-color);
   cursor: pointer;
 }
 
 .heroIntroText p {
-    color:  #3c42f7dc;
+    color:  var(--tertairy-color);
+}
+
+.headingText h1 {
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

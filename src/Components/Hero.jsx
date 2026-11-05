@@ -5,10 +5,9 @@ const Hero = () => {
     return (
         <>
 
-            <section className="hero">
                 <div className="heroContainer">
                     <div className="heroImageCard">
-                        <img src={MyNoteImage} alt={MyNoteImage} id="heroImage" />
+                        <img src={MyNoteImage} alt="Code from MyNotes app" id="heroImage" />
                     </div>
 
                     <div className="headingText">
@@ -34,7 +33,7 @@ const Hero = () => {
                     </div>
 
                 </div>
-            </section>
+          
         </>
     )
 }
