@@ -1,5 +1,6 @@
 import "./Home.css"
 import Hero from "../Components/Hero"
+import FilteredItems from "../Components/FilteredItems"
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
 
             <div className="homeCard">
                <Hero/>
+               <FilteredItems/>
             </div>
             
         </div>
