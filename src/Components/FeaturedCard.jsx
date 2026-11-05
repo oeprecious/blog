@@ -5,11 +5,11 @@ import card3Image from "../assets/images/localStorage.png"
 
 const FeaturedCardImages = () => {
 
-    const featuredCard = [{ id: 1, techStack: "Css", heading: "Making a navbar fixed on mobile", cardPara: "Why fixed worked on desktop but not on phones.", date: "Oct 31| 3min read", cardImage: card1Image },
+    const featuredCard = [{ id: 1, techStack: "Css", heading: "Making a navbar fixed on mobile", cardPara: "Why fixed worked on desktop but not on phones.", date: "Oct 31 • 3 min read", cardImage: card1Image },
 
-    { id: 2, techStack: "FIGMA", heading: "From wireframe to React in four steps", cardPara: "How I look Lume Jewels from design to code.", date: "Oct 31| 3min read", cardImage: card2Image },
+    { id: 2, techStack: "FIGMA", heading: "From wireframe to React in four steps", cardPara: "How I took Lume Jewels from design to code.", date: "Oct 31 • 3 min read", cardImage: card2Image },
 
-    { id: 3, techStack: "JAVASCRIPT", heading: "A begginer guide to localStorage", cardPara: "Saving notes in the browser so they stay after a refresh", date: "Oct 31| 4min read", cardImage: card3Image }]
+    { id: 3, techStack: "JAVASCRIPT", heading: "A beginner guide to localStorage", cardPara: "Saving notes in the browser so they stay after a refresh", date: "Oct 31 • 4 min read", cardImage: card3Image }]
 
     return (
         <>
