@@ -8,7 +8,7 @@
 }
 
 .navLinks ul li:hover {
-  border-bottom: 3px solid #8d90f7;
+  border-bottom: 3px solid #166fe5;
 }
 
 .navLinks ul li:active {
@@ -44,13 +44,18 @@
 
 .menuIcon_writePost p {
   display: inline-block;
-  background-color: #8d90f7;
-  padding: 1rem;
-  border-radius: 1rem;
+  background-color: var(--tertairy-color);
+  padding: 1rem 2.4rem;
+  border-radius: 0.6rem;
+  transition: background-color 0.3s ease;
 }
 
 .menuIcon_writePost p:active {
   transform: scale(0.95);
+}
+
+.menuIcon_writePost p:hover {
+  background-color: #166fe5;
 }
 
 .menuIcon_writePost {
