@@ -1,0 +1,37 @@
+.aboutCard {
+  display: flex !important;
+  gap: 3rem;
+  line-height: 1.4;
+}
+
+.aboutImage {
+  width: 41rem;
+  height: 45rem;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.aboutImage:hover {
+  transform: translateY(-5px);
+}
+
+.aboutContent p {
+  color: var(--tertairy-color);
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.aboutContent ul {
+  margin-left: 2rem;
+}
+
+.aboutContent ul li::marker {
+  font-size: 2.3rem;
+}
