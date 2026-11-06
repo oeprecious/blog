@@ -1,5 +1,7 @@
 import "./Hero.css"
 import MyNoteImage from "../assets/images/myNote.png"
+import { Link } from "react-router"
+import { posts } from "../data/posts"
 
 const Hero = () => {
     return (
@@ -28,7 +30,9 @@ const Hero = () => {
                         </div>
 
                         <div className="readPost">
+                            <Link to={`/post/0`} style={{textDecoration: "none"}}>
                             <p>Read post &rarr;</p>
+                            </Link>
                         </div>
                     </div>
 
