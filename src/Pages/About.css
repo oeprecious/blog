@@ -50,7 +50,10 @@
   border-radius: 0.6rem;
   font-weight: 600;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 #highLight {
@@ -58,8 +61,15 @@
   border: none !important;
 }
 
+#highLight:hover {
+  background-color: #166fe5;
+}
+
 .cv_Link a:hover {
   transform: translateY(-5px);
+  background-color: var(--btn-primary-bg);
+  border: none;
+  color: white !important;
 }
 
 .cv_Link a:active {
