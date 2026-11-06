@@ -19,7 +19,7 @@ const About = () => {
                     </div>
 
                     <div className="aboutPara">
-                        I am a frontend developer, that builds with React.
+                        I am a frontend developer who builds with React.
                     </div>
 
                     <div className="aboutPare2">
@@ -31,8 +31,8 @@ const About = () => {
 
                         <ul>
                             <li>Short notes on problems I solved</li>
-                            <li>Walkthrough of projects like Lume Jewels and MyNotes</li>
-                            <li>Design process notes from figma</li>
+                            <li>Walkthroughs of projects like Lume Jewels and MyNotes</li>
+                            <li>Design process notes from Figma</li>
                         </ul>
                     </div>
 
