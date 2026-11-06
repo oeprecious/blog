@@ -1,24 +1,17 @@
 import "./FeaturedCard.css"
-import card1Image from "../assets/images/css.png"
-import card2Image from "../assets/images/wireframe.png"
-import card3Image from "../assets/images/localStorage.png"
+import { posts } from "../data/posts"
+import { Link } from "react-router"
 
 const FeaturedCardImages = ({ activeTopic }) => {
-
-    const featuredCard = [{ id: 1, techStack: "CSS", heading: "Making a navbar fixed on mobile", cardPara: "Why fixed worked on desktop but not on phones.", date: "Oct 31 • 3 min read", cardImage: card1Image },
-
-    { id: 2, techStack: "FIGMA", heading: "From wireframe to React in four steps", cardPara: "How I took Lume Jewels from design to code.", date: "Oct 31 • 3 min read", cardImage: card2Image },
-
-    { id: 3, techStack: "JAVASCRIPT", heading: "A beginner guide to localStorage", cardPara: "Saving notes in the browser so they stay after a refresh", date: "Oct 31 • 4 min read", cardImage: card3Image }]
-
-
-    const filteredCard = activeTopic === "All" ? featuredCard : featuredCard.filter((item) => item.techStack === activeTopic)
+    
+    const filteredCard = activeTopic === "All" ? posts.filter(p => p.id !== 0) : posts.filter((item) => item.techStack === activeTopic)
 
     return (
         <>
 
             <div className="featuredCardContainer">
                 {filteredCard.map((images) => (
+                    <Link to ={`/post/${images.id}`} key={images.id}  className="imageCard" style={{textDecoration: "none", color: "inherit"}}>
                     <div className="imageCard" key={images.id}>
                         <img src={images.cardImage} alt={images.heading} className="headingImages" />
                         <div className="imageContent">
@@ -28,8 +21,9 @@ const FeaturedCardImages = ({ activeTopic }) => {
                             <p className="gray">{images.date}</p>
                         </div>
                     </div>
-                ))}          
-                 {filteredCard.length === 0 && <p>No posts in this topic yet.</p>}    
+                    </Link>
+                ))}
+                {filteredCard.length === 0 && <p>No posts in this topic yet.</p>}
             </div>
         </>
     )

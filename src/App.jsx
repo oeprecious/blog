@@ -6,6 +6,7 @@ import About from "./Pages/About"
 import Topics from "./Pages/Topics"
 import WritePost from "./Pages/WritePost"
 import { Routes, Route } from 'react-router'
+import Post from './Pages/Post'
 
 const App = () => {
 
@@ -50,6 +51,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/topics" element={<Topics />} />
             <Route path="/writePost" element={<WritePost />} />
+            <Route path="/post/:id" element={<Post/>}/>
           </Routes>
         </main>
       </div>

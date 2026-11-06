@@ -1,8 +1,9 @@
 .headingImages {
   width: 50rem;
-  /* height: 20rem; */
+  height: 19rem;
   display: block;
   object-fit: cover !important;
+  border-radius: 0.6rem;
 }
 
 .featuredCardContainer {
@@ -10,11 +11,14 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 3rem;
+  width: 100%;
 }
 
 .imageCard {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  border-radius: 0.6rem;
+  text-decoration: none;
 }
 
 .imageContent {
