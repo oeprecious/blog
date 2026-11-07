@@ -4,11 +4,14 @@
   align-items: center;
   cursor: pointer;
   font-weight: 700;
-  transition: border-bottom 0.3s ease;
+  transition:
+    border-bottom 0.3s ease,
+    color 0.3s ease;
 }
 
 .navLinks ul li:hover {
   border-bottom: 3px solid #166fe5;
+  color: #166fe5;
 }
 
 .navLinks ul li:active {
