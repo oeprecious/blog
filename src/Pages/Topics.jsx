@@ -10,17 +10,17 @@ const Topics = () => {
 
     const topics = [
 
-        { id: 1, icon: <Code2 />, topic: "HTML", tag: "Structure and semantics" },
+        { id: 1, icon: <Code2 size={32} />, topic: "HTML", tag: "Structure and semantics" },
 
-        { id: 2, icon: <Palette />, topic: "CSS", tag: "Layout, media queries and responsive design" },
+        { id: 2, icon: <Palette size={32} />, topic: "CSS", tag: "Layout, media queries and responsive design" },
 
-        { id: 3, icon: <Braces />, topic: "JavaScript", tag: "Logic, arrays and saving data in the browser" },
+        { id: 3, icon: <Braces size={32} />, topic: "JavaScript", tag: "Logic, arrays and saving data in the browser" },
 
-        { id: 4, icon: <Atom />, topic: "React", tag: "State, routing, and components" },
+        { id: 4, icon: <Atom size={32} />, topic: "React", tag: "State, routing, and components" },
 
-        { id: 5, icon: <PenTool />, topic: "Figma", tag: "Wireframes, style guides and prototype" },
+        { id: 5, icon: <PenTool size={32} />, topic: "Figma", tag: "Wireframes, style guides and prototype" },
 
-        { id: 6, icon: <LayoutGrid />, topic: "All posts", tag: "Every post in one place." }
+        { id: 6, icon: <LayoutGrid size={32} />, topic: "All posts", tag: "Every post in one place." }
     ]
 
     return (

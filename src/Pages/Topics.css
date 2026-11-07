@@ -20,6 +20,10 @@
     transform: translateY(-6px);
 }
 
+.card:active {
+  transform: scale(0.95);
+}
+
 .card h3 {
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",

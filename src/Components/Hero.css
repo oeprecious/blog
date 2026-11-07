@@ -9,7 +9,7 @@
   height: 40rem;
   display: block;
   object-fit: cover;
-   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .headingText p {
@@ -33,10 +33,20 @@
   cursor: pointer;
 }
 
+.readPost p:active {
+  transform: scale(0.95);
+}
+
+.readPost {
+  width: fit-content;
+}
+
 .heroIntroText p {
-    color:  var(--tertairy-color);
+  color: var(--tertairy-color);
 }
 
 .headingText h1 {
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
