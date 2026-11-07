@@ -42,7 +42,7 @@ const App = () => {
     <>
 
       <div style={{ backgroundColor: backgroundColor }} className="appWrapper">
-        
+
         <Navbar handleClick1={handleClick1} />
 
         <main className="appMain">
@@ -51,7 +51,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/topics" element={<Topics />} />
             <Route path="/writePost" element={<WritePost />} />
-            <Route path="/post/:id" element={<Post/>}/>
+            <Route path="/post/:id" element={<Post />} />
           </Routes>
         </main>
       </div>

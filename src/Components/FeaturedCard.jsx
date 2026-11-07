@@ -4,7 +4,7 @@ import { Link } from "react-router"
 
 const FeaturedCardImages = ({ activeTopic }) => {
     
-    const filteredCard = activeTopic === "All" ? posts.filter(p => p.id !== 0) : posts.filter((item) => item.techStack === activeTopic)
+  const filteredCard = activeTopic === "All" ? posts.filter(p => p.id !== 0) : posts.filter((item) => item.techStack === activeTopic)
 
     return (
         <>
