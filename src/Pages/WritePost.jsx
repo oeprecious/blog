@@ -2,13 +2,15 @@ import "./WritePost.css"
 import FilteredItems from "../Components/FilteredItems"
 import { useState } from "react"
 
-const WritePost = () => {
+const WritePost = ({activeTopic, setActiveTopic}) => {
 
     const [title, setTitle] = useState("")
 
     const [coverImage, setCoverImage] = useState("")
 
     const [imageError, setImageError] = useState("")
+
+    const [topic, setTopic] = useState("All")
 
     const handleFile = (file) => {
         if (!file) {
@@ -70,7 +72,7 @@ const WritePost = () => {
 
                         <div className="filteredItems">
                             <p>Topic</p>
-                            <FilteredItems />
+                            <FilteredItems activeTopic={topic} setActiveTopic={setTopic}/>
                         </div>
 
                         <label htmlFor="cover" className="dropArea" onDrag={handleDragOver} onDrop={handleDrop}>
