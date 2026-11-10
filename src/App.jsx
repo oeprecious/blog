@@ -7,6 +7,7 @@ import Topics from "./Pages/Topics"
 import WritePost from "./Pages/WritePost"
 import { Routes, Route } from 'react-router'
 import Post from './Pages/Post'
+import { posts } from './data/posts'
 
 const App = () => {
 
@@ -15,6 +16,9 @@ const App = () => {
     return (savedPosts) ?
       JSON.parse(savedPosts) : []
   })
+  
+  const allPosts = [...newPosts, ...posts]
+  console.log(allPosts)
 
   //Function thats add Posts
 
