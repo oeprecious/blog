@@ -16,9 +16,8 @@ const App = () => {
     return (savedPosts) ?
       JSON.parse(savedPosts) : []
   })
-  
+
   const allPosts = [...newPosts, ...posts]
-  console.log(allPosts)
 
   //Function thats add Posts
 
@@ -34,15 +33,15 @@ const App = () => {
       fullContent: fullContent
     }
     setNewPosts([...newPosts, post])
-    
+
     console.log(post)
   }
 
- useEffect(() => {
-  localStorage.setItem("newPosts", JSON.stringify(newPosts))
- }, [newPosts])
+  useEffect(() => {
+    localStorage.setItem("newPosts", JSON.stringify(newPosts))
+  }, [newPosts])
 
- console.log(newPosts)
+  console.log(newPosts)
 
 
   const usersavedTheme = localStorage.getItem("theme")
@@ -82,7 +81,7 @@ const App = () => {
 
         <main className="appMain">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home allPosts={allPosts} />} />
             <Route path="/about" element={<About />} />
             <Route path="/topics" element={<Topics />} />
             <Route path="/writePost" element={<WritePost addPosts={addPosts} />} />
