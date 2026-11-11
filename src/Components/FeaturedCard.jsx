@@ -2,7 +2,7 @@ import "./FeaturedCard.css"
 import { posts } from "../data/posts"
 import { Link } from "react-router"
 
-const FeaturedCardImages = ({ activeTopic }) => {
+const FeaturedCardImages = ({ activeTopic, allPosts }) => {
     
   const filteredCard = activeTopic === "All" ? posts.filter(p => p.id !== 0) : posts.filter((item) => item.techStack === activeTopic)
 
@@ -10,7 +10,7 @@ const FeaturedCardImages = ({ activeTopic }) => {
         <>
 
             <div className="featuredCardContainer">
-                {filteredCard.map((images) => (
+                {allPosts.map((images) => (
                     <Link to ={`/post/${images.id}`} key={images.id}  className="imageCard" style={{textDecoration: "none", color: "inherit"}}>
                     <div className="imageCard" key={images.id}>
                         <img src={images.cardImage} alt={images.heading} className="headingImages" />
