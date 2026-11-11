@@ -2,10 +2,37 @@ import "./WritePost.css"
 import FilteredItems from "../Components/FilteredItems"
 import { useState } from "react"
 
-const WritePost = ({activeTopic, setActiveTopic}) => {
+
+
+const WritePost = ({ activeTopic, setActiveTopic, addPosts }) => {
+
 
     const [title, setTitle] = useState("")
+    const [postDescription, setPostDescription] = useState("")
+    const [errorMessage, setErrorMesssage] = useState("")
 
+    const handleSubmit = (event) => {
+
+        event.preventDefault()
+
+        const userTitleInput = title.trim()
+        const userPostDescription = postDescription.trim()
+
+        if (userTitleInput === "" || userPostDescription === "" || topic === "" || coverImage === "") {
+            setErrorMesssage("All fields are required")
+            return
+        } else{
+            addPosts(userTitleInput, userPostDescription, topic, coverImage)
+        }
+        setErrorMesssage("")
+        userTitleInput("")
+        userPostDescription("")
+        setTopic("")
+        setCoverImage("")
+    }
+
+
+    //   Image state
     const [coverImage, setCoverImage] = useState("")
 
     const [imageError, setImageError] = useState("")
@@ -53,10 +80,6 @@ const WritePost = ({activeTopic, setActiveTopic}) => {
         dropContent = <p>Drop an image here or browse</p>
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-    }
-
     return (
         <>
 
@@ -72,7 +95,7 @@ const WritePost = ({activeTopic, setActiveTopic}) => {
 
                         <div className="filteredItems">
                             <p>Topic</p>
-                            <FilteredItems activeTopic={topic} setActiveTopic={setTopic}/>
+                            <FilteredItems activeTopic={topic} setActiveTopic={setTopic} />
                         </div>
 
                         <label htmlFor="cover" className="dropArea" onDrag={handleDragOver} onDrop={handleDrop}>
@@ -81,16 +104,18 @@ const WritePost = ({activeTopic, setActiveTopic}) => {
                         </label>
                         <p>{imageError}</p>
 
-                       <div className="post">
-                        <label htmlFor="post">Post
-                            <textarea name="post" id="post" placeholder="Write your post"></textarea>
-                        </label>
-                       </div>
+                        <div className="post">
+                            <label htmlFor="post">Post
+                                <textarea name="post" id="post" placeholder="Write your post" value={postDescription} onChange={event => setPostDescription(event.target.value)}></textarea>
+                            </label>
+                        </div>
 
-                    <div className="formBtn">
-                        <button id="publishBtn">Publish</button>
-                         <button id="saveDraftBtn">Save draft</button>
-                    </div>
+                        <p>{errorMessage}</p>
+
+                        <div className="formBtn">
+                            <button id="publishBtn">Publish</button>
+                            <button id="saveDraftBtn">Save draft</button>
+                        </div>
 
                     </form>
                 </div>

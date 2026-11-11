@@ -22,12 +22,12 @@ const App = () => {
 
   //Function thats add Posts
 
-  const addPosts = (heading, cardPara, techStack, date, cardImage, fullContent) => {
+  const addPosts = (heading, techStack, cardImage, fullContent) => {
 
     const post = {
       id: Date.now(),
       heading: heading,
-      cardPara: cardPara,
+      cardPara: `${fullContent.slice(0,100)}...`,
       techStack: techStack,
       date: new Date().toLocaleDateString(),
       cardImage: cardImage,
@@ -43,9 +43,6 @@ const App = () => {
  }, [newPosts])
 
  console.log(newPosts)
-
-
-
 
 
   const usersavedTheme = localStorage.getItem("theme")
@@ -88,7 +85,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/topics" element={<Topics />} />
-            <Route path="/writePost" element={<WritePost />} />
+            <Route path="/writePost" element={<WritePost addPosts={addPosts} />} />
             <Route path="/post/:id" element={<Post />} />
           </Routes>
         </main>
