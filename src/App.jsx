@@ -27,7 +27,7 @@ const App = () => {
     const post = {
       id: Date.now(),
       heading: heading,
-      cardPara: `${fullContent.slice(0,100)}...`,
+      cardPara: `${fullContent.slice(0, 100)}...`,
       techStack: techStack,
       date: new Date().toLocaleDateString(),
       cardImage: cardImage,
