@@ -3,30 +3,30 @@ import FilteredItems from "../Components/FilteredItems"
 import { useState } from "react"
 
 
-
 const WritePost = ({ activeTopic, setActiveTopic, addPosts }) => {
-
 
     const [title, setTitle] = useState("")
     const [postDescription, setPostDescription] = useState("")
-    const [errorMessage, setErrorMesssage] = useState("")
+    const [errorMessage, setErrorMessage] = useState("")
 
     const handleSubmit = (event) => {
 
         event.preventDefault()
 
         const userTitleInput = title.trim()
-        const userPostDescription = postDescription.trim()
+        const userPostDescriptionInput = postDescription.trim()
 
-        if (userTitleInput === "" || userPostDescription === "" || topic === "" || coverImage === "") {
-            setErrorMesssage("All fields are required")
+        console.log("topic:", topic, "| cover:", coverImage.slice(0, 30), "| title:", userTitleInput, "| post:", userPostDescriptionInput)
+
+        if (userTitleInput === "" || userPostDescriptionInput === "" || topic === "" || coverImage === "") {
+            setErrorMessage("All fields are required")
             return
-        } else{
-            addPosts(userTitleInput, userPostDescription, topic, coverImage)
+        } else {
+            addPosts(userTitleInput, topic, coverImage, userPostDescriptionInput  )
         }
-        setErrorMesssage("")
-        userTitleInput("")
-        userPostDescription("")
+        setErrorMessage("")
+        setTitle("")
+        setPostDescription("")
         setTopic("")
         setCoverImage("")
     }
