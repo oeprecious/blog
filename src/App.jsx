@@ -33,7 +33,7 @@ const App = () => {
       cardImage: cardImage,
       fullContent: fullContent
     }
-    setNewPosts([...post, newPosts])
+    setNewPosts([...newPosts, post])
     
     console.log(post)
   }
