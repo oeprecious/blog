@@ -1,10 +1,10 @@
 import { useParams, Link } from "react-router"
-import { posts } from "../data/posts.jsx"
 
-const Post = () => {
+const Post = ({allPosts}) => {
+
   const { id } = useParams()
-
-  const post = posts.find((p) => String(p.id) === String(id))
+  
+  const post = allPosts.find((p) => String(p.id) === String(id))
 
   if (!post) return <div style={{ padding: 20 }}>Post not found </div>
 
