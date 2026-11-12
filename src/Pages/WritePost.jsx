@@ -100,6 +100,7 @@ const WritePost = ({ activeTopic, setActiveTopic, addPosts }) => {
 
                         <label htmlFor="cover" className="dropArea" onDrag={handleDragOver} onDrop={handleDrop}>
                             {dropContent}
+                           
                             <input type="file" name="file" id="cover" accept="image/*" onChange={handleInputChange} hidden />
                         </label>
                         <p>{imageError}</p>
