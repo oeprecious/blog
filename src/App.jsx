@@ -26,7 +26,7 @@ const App = () => {
     const post = {
       id: Date.now(),
       heading: heading,
-      cardPara: `${fullContent.slice(0, 100)}...`,
+      cardPara: `${fullContent.slice(0, 80)}...`,
       techStack: techStack,
       date: new Date().toLocaleDateString(),
       cardImage: cardImage,
@@ -41,7 +41,7 @@ const App = () => {
     localStorage.setItem("newPosts", JSON.stringify(newPosts))
   }, [newPosts])
 
-  console.log(newPosts)
+  // localStorage.clear()
 
 
   const usersavedTheme = localStorage.getItem("theme")
