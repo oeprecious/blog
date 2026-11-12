@@ -4,15 +4,16 @@ import { Link } from "react-router"
 
 const FeaturedCardImages = ({ activeTopic, allPosts }) => {
     
-  const filteredCard = activeTopic === "All" ? posts.filter(p => p.id !== 0) : posts.filter((item) => item.techStack === activeTopic)
+
+  const filteredCard = activeTopic === "All" ? allPosts.filter(p => p.id !== 0) : allPosts.filter((item) => item.techStack === activeTopic )
+
 
     return (
         <>
-
             <div className="featuredCardContainer">
-                {allPosts.map((images) => (
+                {filteredCard.map((images) => (
                     <Link to ={`/post/${images.id}`} key={images.id}  className="imageCard" style={{textDecoration: "none", color: "inherit"}}>
-                    <div className="imageCard" key={images.id}>
+                    <div className="imageCard">
                         <img src={images.cardImage} alt={images.heading} className="headingImages" />
                         <div className="imageContent">
                             <p className="stack">{images.techStack}</p>
