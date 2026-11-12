@@ -1,12 +1,11 @@
 import "./Topics.css"
 import { Link } from "react-router"
-import { posts } from "../data/posts"
 
 import { Code2, Palette, Braces, Atom, PenTool, LayoutGrid } from "lucide-react"
 
 // const topics = ["ALL, posts", "HTML", "CSS", "JavaScript", "React", "Figma"]
 
-const Topics = () => {
+const Topics = ({allPosts}) => {
 
     const topics = [
 
@@ -40,7 +39,7 @@ const Topics = () => {
 
             <div className="topicsCardContainer">
                 {topics.map(item => {
-                    const count = item.topic === "All posts" ? posts.length : posts.filter(p => p.techStack?.toLowerCase() === item.topic?.toLowerCase()).length
+                    const count = item.topic === "All posts" ? allPosts.length : allPosts.filter(p => p.techStack?.toLowerCase() === item.topic?.toLowerCase()).length
                     return (
                         <Link key={item.id} to={item.topic === "All posts" ? "/" : `/?topic=${item.topic.toLowerCase()}`} style={{ textDecoration: "none", color: "inherit" }}>
                             <div className="card">

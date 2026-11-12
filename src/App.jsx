@@ -83,7 +83,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home allPosts={allPosts} />} />
             <Route path="/about" element={<About />} />
-            <Route path="/topics" element={<Topics />} />
+            <Route path="/topics" element={<Topics allPosts={allPosts} />} />
             <Route path="/writePost" element={<WritePost addPosts={addPosts} />} />
             <Route path="/post/:id" element={<Post allPosts={allPosts}/>} />
           </Routes>
