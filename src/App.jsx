@@ -33,16 +33,11 @@ const App = () => {
       fullContent: fullContent
     }
     setNewPosts([...newPosts, post])
-
-    console.log(post)
   }
 
   useEffect(() => {
     localStorage.setItem("newPosts", JSON.stringify(newPosts))
   }, [newPosts])
-
-  // localStorage.clear()
-
 
   const usersavedTheme = localStorage.getItem("theme")
 

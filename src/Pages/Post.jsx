@@ -9,7 +9,7 @@ const Post = ({allPosts}) => {
   if (!post) return <div style={{ padding: 20 }}>Post not found </div>
 
   return (
-    <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+    <div style={{ maxWidth: "700px", margin: "0 auto", overflowWrap: "anywhere" }}>
       <Link to="/" style={{ textDecoration: "none", color: "#3c42f7dc"}}>← Back to home</Link>
       <img src={post.cardImage} alt="" style={{ width: "100%", margin: "2rem 0" }} />
       <p>{post.techStack}</p>

@@ -16,8 +16,6 @@ const WritePost = ({ activeTopic, setActiveTopic, addPosts }) => {
         const userTitleInput = title.trim()
         const userPostDescriptionInput = postDescription.trim()
 
-        console.log("topic:", topic, "| cover:", coverImage.slice(0, 30), "| title:", userTitleInput, "| post:", userPostDescriptionInput)
-
         if (userTitleInput === "" || userPostDescriptionInput === "" || topic === "" || coverImage === "") {
             setErrorMessage("All fields are required")
             return
