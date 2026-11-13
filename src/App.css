@@ -35,7 +35,7 @@ h2 {
   }
 
   .appMain {
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 
   .filteredCard {
@@ -50,38 +50,45 @@ h2 {
   }
 
   .headingText p {
-  line-height: 1.4 !important;
-}
+    line-height: 1.4 !important;
+  }
 
   .navItems {
-  padding: 0 1.5rem !important;
-}
+    padding: 0 1.5rem !important;
+  }
 
-.gray {
-  line-height: 1.4 !important;
-  overflow: hidden;
-}
+  .gray {
+    line-height: 1.4 !important;
+    overflow: hidden;
+  }
 
+  /* TopicsPage */
+  .topicsCardContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) !important;
+    gap: 2rem !important;
+    margin-top: 2rem !important;
+  }
 
-/* TopicsPage */
-.topicsCardContainer {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr) !important;
-  gap: 2rem !important;
-  margin-top: 2rem !important;
-}
+  .topicsCardContainer > :last-child {
+    order: -1;
+  }
 
-.topicsCardContainer > :last-child {
-  order: -1;
-}
+  /* About Page */
+  .aboutCard {
+    display: flex !important;
+    flex-direction: column;
+    gap: 3rem;
+    line-height: 1.4;
+  }
 
+  .aboutImage {
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
 
 @media only screen and (min-width: 390px) and (max-width: 601px) {
-  /* * {
-    border: 1px solid red;
-  } */
-
   .featuredCardContainer {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
@@ -102,24 +109,44 @@ h2 {
     gap: 2rem !important;
   }
 
-  .headingImages { 
-  width: 100%;
-  height: 39% !important;
-  display: block !important;
-  object-fit: cover !important;
-  border-radius: 0.6rem;
-}
+  .headingImages {
+    width: 100%;
+    height: 39% !important;
+    display: block !important;
+    object-fit: cover !important;
+    border-radius: 0.6rem;
+  }
 
-.imageCard {
-  width: 100% !important;
-  height: 100% !important;
-}
- 
-/* TopicsPage */
- .topicsCardContainer {
-  display: grid;
-  gap: 1.5rem !important;
-  margin-top: 1.5rem !important;
-}
+  .imageCard {
+    width: 100% !important;
+    height: 100% !important;
+  }
 
+  /* TopicsPage */
+  .topicsCardContainer {
+    display: grid;
+    gap: 1.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  /* About */
+  .aboutCard {
+    display: flex !important;
+    gap: 2rem !important;
+    line-height: 1.4;
+  }
+
+  .cv_Link a {
+    padding: 1.3rem 2rem !important;
+    white-space: nowrap;
+    text-align: center;
+    margin: 0 auto !important;
+    width: 60%;
+  }
+
+  .cv_Link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+  }
 }
