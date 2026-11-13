@@ -104,7 +104,7 @@ const App = () => {
   return (
     <>
 
-      <div style={{ backgroundColor: backgroundColor }} className="appWrapper">
+      <div style={{ backgroundColor: backgroundColor, minHeight: "100vh" }} className="appWrapper">
 
         <Navbar handleClick1={handleClick1} />
 
