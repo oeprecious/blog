@@ -22,7 +22,6 @@ const App = () => {
   //Function thats add Posts
 
   const addPosts = (heading, techStack, cardImage, fullContent) => {
-
     const post = {
       id: Date.now(),
       heading: heading,
@@ -80,7 +79,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/topics" element={<Topics allPosts={allPosts} />} />
             <Route path="/writePost" element={<WritePost addPosts={addPosts} />} />
-            <Route path="/post/:id" element={<Post allPosts={allPosts}/>} />
+            <Route path="/post/:id" element={<Post allPosts={allPosts} />} />
           </Routes>
         </main>
       </div>

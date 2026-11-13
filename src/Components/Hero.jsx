@@ -1,7 +1,6 @@
 import "./Hero.css"
 import MyNoteImage from "../assets/images/myNote.png"
 import { Link } from "react-router"
-import { posts } from "../data/posts"
 
 const Hero = () => {
     return (

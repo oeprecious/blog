@@ -5,7 +5,7 @@ import MyNoteImage from "../assets/images/myNote.png"
 
 export const posts = [
 
-    { id: 0, techStack: "REACT - FEATURED", heading: "Why my React state was not working, and the one-fix", date: "Oct • 31 4 min read", cardImage: MyNoteImage, fullContent: "A short note from building MyNotes: I was updating state directly like notes.push() instaed of setNotes([...notes]). React didn't re-render. The fix was using the spread operator" },
+    { id: 0, techStack: "REACT - FEATURED", heading: "Why my React state was not working, and the one-fix", date: "Oct • 31 4 min read", cardImage: MyNoteImage, fullContent: "A short note from building MyNotes: I was updating state directly like notes.push() instead of setNotes([...notes]). React didn't re-render. The fix was using the spread operator" },
 
     {
         id: 1, techStack: "CSS", heading: "Making a navbar fixed on mobile", cardPara: "Why fixed worked on desktop but not on phones.", date: "Oct 31 • 3 min read", cardImage: card1Image, fullContent: `This one frustrated me. My navbar was sticky on desktop, but on my phone it kept scrolling away. 
