@@ -1,23 +1,25 @@
 import "./WritePost.css"
 import FilteredItems from "../Components/FilteredItems"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 
-const WritePost = ({ activeTopic, setActiveTopic, addPosts, addDrafts, myDrafts, setMyDrafts }) => {
+const loadDraft = () => {
+    try {
+        const saved = localStorage.getItem("myDrafts")
+        return saved ? JSON.parse(saved) : null
+    } catch {
+        return null
+    }
+}
 
-    const [title, setTitle] = useState("")
-    const [postDescription, setPostDescription] = useState("")
+const WritePost = ({ addPosts, addDrafts }) => {
+
+    const [initialDraft] = useState(loadDraft)
+
+    const [title, setTitle] = useState(initialDraft?.title || "")
+    const [postDescription, setPostDescription] = useState(initialDraft?.postDescription || "")
     const [errorMessage, setErrorMessage] = useState("")
 
-    // Restore drafts after loading.
-    useEffect(() => {
-        if (myDrafts) {
-            setTitle(myDrafts.title || "")
-            setPostDescription(myDrafts.postDescription || "")
-            setTopic(myDrafts.topic || "")
-            setCoverImage(myDrafts.coverImage || "")
-        }
-    })
 
     // Drafts function
     const handleClick = () => {
@@ -28,18 +30,19 @@ const WritePost = ({ activeTopic, setActiveTopic, addPosts, addDrafts, myDrafts,
             coverImage: coverImage
         }
 
-        if (!draft.title || !draft.postDescription || !draft.topic || !draft.coverImage) {
-            setErrorMessage("Please fill all fields")
+        if (draft.title === "" && draft.postDescription === "") {
+            setErrorMessage("Write a title or some content first")
             return
         }
 
-        // 1. For Drafts Page (array)
-        addDrafts(draft.title, draft.topic, draft.coverImage, draft.postDescription)
-
-        // 2. For inputs to survive refresh (single object)
-        setMyDrafts(draft)
-
-        setErrorMessage("")
+        try {
+            localStorage.setItem("myDrafts", JSON.stringify(draft))
+            addDrafts(title.trim(), topic, coverImage, postDescription.trim())
+            setErrorMessage("Draft saved")
+            setTimeout(() => setErrorMessage(""), 3000)
+        } catch {
+            setErrorMessage("Draft is too large. Try a smaller image.")
+        }
     }
 
     const handleSubmit = (event) => {
@@ -54,7 +57,6 @@ const WritePost = ({ activeTopic, setActiveTopic, addPosts, addDrafts, myDrafts,
             return
         } else {
             addPosts(userTitleInput, topic, coverImage, userPostDescriptionInput)
-            setMyDrafts(null)
             localStorage.removeItem("myDrafts")
         }
         setErrorMessage("")
@@ -66,11 +68,11 @@ const WritePost = ({ activeTopic, setActiveTopic, addPosts, addDrafts, myDrafts,
 
 
     //   Image state
-    const [coverImage, setCoverImage] = useState("")
+    const [coverImage, setCoverImage] = useState(initialDraft?.coverImage || "")
 
     const [imageError, setImageError] = useState("")
 
-    const [topic, setTopic] = useState("All")
+    const [topic, setTopic] = useState(initialDraft?.topic || "All")
 
     const handleFile = (file) => {
         if (!file) {
@@ -147,7 +149,7 @@ const WritePost = ({ activeTopic, setActiveTopic, addPosts, addDrafts, myDrafts,
                         <p>{errorMessage}</p>
 
                         <div className="formBtn">
-                            <button type="button" id="publishBtn">Publish</button>
+                            <button type="submit" id="publishBtn">Publish</button>
                             <button type="button" onClick={handleClick} id="saveDraftBtn">Save draft</button>
                         </div>
 

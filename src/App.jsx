@@ -11,13 +11,6 @@ import { posts } from './data/posts'
 
 const App = () => {
 
-  const getSavedDrafts = () => {
-    const saved = localStorage.getItem("myDrafts")
-    return saved ? JSON.parse(saved) : null
-  }
-
-  const [myDrafts, setMyDrafts] = useState(getSavedDrafts)
-
   const [drafts, setDrafts] = useState(() => {
     const savedDrafts = localStorage.getItem("drafts");
     try {
@@ -25,7 +18,7 @@ const App = () => {
         JSON.parse(savedDrafts) : []
 
     } catch {
-      []
+      return []
     }
   })
 
@@ -60,26 +53,26 @@ const App = () => {
 
     const draft = {
       id: Date.now(),
-      heading: heading,
+      heading,
       cardPara: `${fullContent.slice(0, 80)}...`,
       techStack: techStack,
       date: new Date().toLocaleDateString(),
-      cardImage: cardImage,
-      fullContent: fullContent
+      cardImage,
+      fullContent
     }
-    setDrafts([...drafts, draft])
+    setDrafts(prev => [...prev, draft])
   }
 
+
   useEffect(() => {
-    localStorage.setItem("drafts", JSON.stringify(drafts))
+    try {
+      localStorage.setItem("drafts", JSON.stringify(drafts))
+    } catch {
+    }
   }, [drafts])
 
-  useEffect(() => {
-    localStorage.setItem("myDrafts", JSON.stringify(myDrafts))
-  }, [myDrafts])
- 
-  // localStorage.clear()
 
+  
   const usersavedTheme = localStorage.getItem("theme")
 
   let initialMood = false
@@ -108,8 +101,6 @@ const App = () => {
     backgroundColor = "White"
   }
 
-  localStorage.clear()
-
   return (
     <>
 
@@ -122,7 +113,7 @@ const App = () => {
             <Route path="/" element={<Home allPosts={allPosts} />} />
             <Route path="/about" element={<About />} />
             <Route path="/topics" element={<Topics allPosts={allPosts} />} />
-            <Route path="/writePost" element={<WritePost addPosts={addPosts} addDrafts={addDrafts} myDrafts={myDrafts} setMyDraft={setMyDrafts} />} />
+            <Route path="/writePost" element={<WritePost addPosts={addPosts} addDrafts={addDrafts} />} />
             <Route path="/post/:id" element={<Post allPosts={allPosts} />} />
           </Routes>
         </main>
