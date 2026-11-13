@@ -1,13 +1,46 @@
 import "./WritePost.css"
 import FilteredItems from "../Components/FilteredItems"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
-const WritePost = ({ activeTopic, setActiveTopic, addPosts }) => {
+const WritePost = ({ activeTopic, setActiveTopic, addPosts, addDrafts, myDrafts, setMyDrafts }) => {
 
     const [title, setTitle] = useState("")
     const [postDescription, setPostDescription] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
+
+    // Restore drafts after loading.
+    useEffect(() => {
+        if (myDrafts) {
+            setTitle(myDrafts.title || "")
+            setPostDescription(myDrafts.postDescription || "")
+            setTopic(myDrafts.topic || "")
+            setCoverImage(myDrafts.coverImage || "")
+        }
+    })
+
+    // Drafts function
+    const handleClick = () => {
+        const draft = {
+            title: title.trim(),
+            postDescription: postDescription.trim(),
+            topic: topic,
+            coverImage: coverImage
+        }
+
+        if (!draft.title || !draft.postDescription || !draft.topic || !draft.coverImage) {
+            setErrorMessage("Please fill all fields")
+            return
+        }
+
+        // 1. For Drafts Page (array)
+        addDrafts(draft.title, draft.topic, draft.coverImage, draft.postDescription)
+
+        // 2. For inputs to survive refresh (single object)
+        setMyDrafts(draft)
+
+        setErrorMessage("")
+    }
 
     const handleSubmit = (event) => {
 
@@ -20,7 +53,9 @@ const WritePost = ({ activeTopic, setActiveTopic, addPosts }) => {
             setErrorMessage("All fields are required")
             return
         } else {
-            addPosts(userTitleInput, topic, coverImage, userPostDescriptionInput  )
+            addPosts(userTitleInput, topic, coverImage, userPostDescriptionInput)
+            setMyDrafts(null)
+            localStorage.removeItem("myDrafts")
         }
         setErrorMessage("")
         setTitle("")
@@ -98,7 +133,7 @@ const WritePost = ({ activeTopic, setActiveTopic, addPosts }) => {
 
                         <label htmlFor="cover" className="dropArea" onDrag={handleDragOver} onDrop={handleDrop}>
                             {dropContent}
-                           
+
                             <input type="file" name="file" id="cover" accept="image/*" onChange={handleInputChange} hidden />
                         </label>
                         <p>{imageError}</p>
@@ -112,8 +147,8 @@ const WritePost = ({ activeTopic, setActiveTopic, addPosts }) => {
                         <p>{errorMessage}</p>
 
                         <div className="formBtn">
-                            <button id="publishBtn">Publish</button>
-                            <button id="saveDraftBtn">Save draft</button>
+                            <button type="button" id="publishBtn">Publish</button>
+                            <button type="button" onClick={handleClick} id="saveDraftBtn">Save draft</button>
                         </div>
 
                     </form>

@@ -11,6 +11,24 @@ import { posts } from './data/posts'
 
 const App = () => {
 
+  const getSavedDrafts = () => {
+    const saved = localStorage.getItem("myDrafts")
+    return saved ? JSON.parse(saved) : null
+  }
+
+  const [myDrafts, setMyDrafts] = useState(getSavedDrafts)
+
+  const [drafts, setDrafts] = useState(() => {
+    const savedDrafts = localStorage.getItem("drafts");
+    try {
+      return (savedDrafts) ?
+        JSON.parse(savedDrafts) : []
+
+    } catch {
+      []
+    }
+  })
+
   const [newPosts, setNewPosts] = useState(() => {
     const savedPosts = localStorage.getItem("newPosts");
     return (savedPosts) ?
@@ -20,7 +38,6 @@ const App = () => {
   const allPosts = [...newPosts, ...posts]
 
   //Function thats add Posts
-
   const addPosts = (heading, techStack, cardImage, fullContent) => {
     const post = {
       id: Date.now(),
@@ -37,6 +54,31 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem("newPosts", JSON.stringify(newPosts))
   }, [newPosts])
+
+  // Function that add Drafts
+  const addDrafts = (heading, techStack, cardImage, fullContent) => {
+
+    const draft = {
+      id: Date.now(),
+      heading: heading,
+      cardPara: `${fullContent.slice(0, 80)}...`,
+      techStack: techStack,
+      date: new Date().toLocaleDateString(),
+      cardImage: cardImage,
+      fullContent: fullContent
+    }
+    setDrafts([...drafts, draft])
+  }
+
+  useEffect(() => {
+    localStorage.setItem("drafts", JSON.stringify(drafts))
+  }, [drafts])
+
+  useEffect(() => {
+    localStorage.setItem("myDrafts", JSON.stringify(myDrafts))
+  }, [myDrafts])
+ 
+  // localStorage.clear()
 
   const usersavedTheme = localStorage.getItem("theme")
 
@@ -66,6 +108,8 @@ const App = () => {
     backgroundColor = "White"
   }
 
+  localStorage.clear()
+
   return (
     <>
 
@@ -78,7 +122,7 @@ const App = () => {
             <Route path="/" element={<Home allPosts={allPosts} />} />
             <Route path="/about" element={<About />} />
             <Route path="/topics" element={<Topics allPosts={allPosts} />} />
-            <Route path="/writePost" element={<WritePost addPosts={addPosts} />} />
+            <Route path="/writePost" element={<WritePost addPosts={addPosts} addDrafts={addDrafts} myDrafts={myDrafts} setMyDraft={setMyDrafts} />} />
             <Route path="/post/:id" element={<Post allPosts={allPosts} />} />
           </Routes>
         </main>
