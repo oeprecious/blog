@@ -1,5 +1,4 @@
 import "./FeaturedCard.css"
-import { posts } from "../data/posts"
 import { Link } from "react-router"
 
 const FeaturedCardImages = ({ activeTopic, allPosts }) => {
