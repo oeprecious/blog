@@ -18,9 +18,6 @@ h2 {
 }
 
 @media only screen and (max-width: 768px) {
-  /* * {
-    border: 1px solid red !important;
-  } */
 
   .heroContainer {
     display: flex;
@@ -86,6 +83,14 @@ h2 {
     width: 100% !important;
     height: 100% !important;
   }
+
+
+  /* NAVBAR */ 
+  #menuIcon {
+  display: inline-block !important;
+}
+
+
 }
 
 @media only screen and (min-width: 390px) and (max-width: 601px) {
