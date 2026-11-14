@@ -26,13 +26,13 @@ const Navbar = ({ handleClick1, backgroundColor }) => {
                         <div className="darkMoodBtn">
                             <Moon size={30} onClick={handleClick1} className={backgroundColor} />
                         </div>
-
-                        <div className="menuIcon_writePost">
+                       
+                    </ul>
+                     <div className="menuIcon_writePost">
 
                             <Link to="/writePost" style={{ textDecoration: "none", color: "black" }}><p>Write post</p></Link>
                             <MenuIcon size={30} id="menuIcon" />
                         </div>
-                    </ul>
                 </nav>
             </div>
 
