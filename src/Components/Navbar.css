@@ -1,16 +1,26 @@
 .navLinks ul {
-  display: flex;
+  display: flex !important;
   gap: 3rem;
-  align-items: center;
-  cursor: pointer;
+  align-items: center !important;
   font-weight: 700;
+  cursor: pointer;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.navLinks ul li {
   transition:
     border-bottom 0.3s ease,
-    color 0.3s ease;
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .navLinks ul li:hover {
-  border-bottom: 3px solid #166fe5;
+  border-bottom: 2px solid #166fe5;
   color: #166fe5;
 }
 
@@ -18,8 +28,8 @@
   transform: scale(0.95);
 }
 
-.navLinks ul li {
-  list-style: none;
+ul li {
+  list-style: none !important;
 }
 
 .navItems {
@@ -63,7 +73,7 @@
 
 .menuIcon_writePost {
   display: flex;
-  align-items: center;
+  align-items: flex-start !important;
   gap: 3rem;
 }
 
