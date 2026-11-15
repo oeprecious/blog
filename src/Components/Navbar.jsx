@@ -12,7 +12,7 @@ const Navbar = ({ handleClick1, backgroundColor }) => {
 
                 <div className="logoText">
 
-                    <Link to="/" style={{textDecoration: "none", color: "black"}}>
+                    <Link to="/" style={{ textDecoration: "none", color: "black" }}>
                         <h1>Precious</h1>
                     </Link>
                 </div>
@@ -26,13 +26,13 @@ const Navbar = ({ handleClick1, backgroundColor }) => {
                         <div className="darkMoodBtn">
                             <Moon size={30} onClick={handleClick1} className={backgroundColor} />
                         </div>
-                       
-                    </ul>
-                     <div className="menuIcon_writePost">
 
-                            <Link to="/writePost" style={{ textDecoration: "none", color: "black" }}><p>Write post</p></Link>
-                            <MenuIcon size={30} id="menuIcon" />
-                        </div>
+                    </ul>
+                    <div className="menuIcon_writePost">
+
+                        <Link to="/writePost" style={{ textDecoration: "none", color: "black" }}><p>Write post</p></Link>
+                        <MenuIcon size={35} id="menuIcon" />
+                    </div>
                 </nav>
             </div>
 

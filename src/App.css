@@ -18,6 +18,30 @@ h2 {
 }
 
 @media only screen and (max-width: 768px) {
+  /* * {
+    border: 1px solid red;
+  } */
+
+  .navLinks ul {
+    display: flex;
+    flex-direction: column !important;
+    position: fixed;
+    right: 0 !important;
+    top: 0 !important;
+    transform: translateX(100%);
+    height: calc(100vh - 10vh);
+  }
+
+
+  .menuIcon_writePost p {
+    white-space: nowrap;
+    padding: 0.7rem 1.4rem !important;
+  }
+
+  .menuIcon_writePost {
+    display: flex;
+    gap: 1.5rem !important;
+  }
 
   .heroContainer {
     display: flex;
@@ -51,7 +75,7 @@ h2 {
   }
 
   .navItems {
-    padding: 0 1.5rem !important;
+    padding: 0 1rem !important;
   }
 
   .gray {
@@ -84,13 +108,10 @@ h2 {
     height: 100% !important;
   }
 
-
-  /* NAVBAR */ 
+  /* NAVBAR */
   #menuIcon {
-  display: inline-block !important;
-}
-
-
+    display: inline-block !important;
+  }
 }
 
 @media only screen and (min-width: 390px) and (max-width: 601px) {
