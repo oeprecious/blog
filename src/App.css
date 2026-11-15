@@ -51,6 +51,7 @@ h2 {
   .menuIcon_writePost p {
     white-space: nowrap;
     padding: 0.7rem 1.4rem !important;
+    font-weight: 600;
   }
 
   .menuIcon_writePost {
@@ -71,7 +72,7 @@ h2 {
   }
 
   .appMain {
-    padding: 2rem 1rem;
+    padding: 1.6rem 1.5rem;
   }
 
   .filteredCard {
