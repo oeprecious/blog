@@ -18,20 +18,29 @@ h2 {
 }
 
 @media only screen and (max-width: 768px) {
-  /* * {
-    border: 1px solid red;
-  } */
-
   .navLinks ul {
     display: flex;
-    flex-direction: column !important;
+    flex-direction: column;
     position: fixed;
-    right: 0 !important;
-    top: 0 !important;
+    right: 0;
+    top: 10vh;
     transform: translateX(100%);
-    height: calc(100vh - 10vh);
+    height: 100vh;
+    visibility: hidden;
+    width: 70%;
+    background-color: white;
+    transition: all 0.3s ease;
+    padding-top: 2rem;
   }
 
+  #moon {
+    color: black;
+  }
+
+  .navLinks ul.active {
+    transform: translateX(0);
+    visibility: visible;
+  }
 
   .menuIcon_writePost p {
     white-space: nowrap;
