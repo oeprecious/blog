@@ -37,6 +37,12 @@ h2 {
     color: black;
   }
 
+  .overLay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+  }
+
   .navLinks ul.active {
     transform: translateX(0);
     visibility: visible;
