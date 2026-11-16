@@ -30,7 +30,7 @@ const Navbar = ({ handleClick1, backgroundColor }) => {
         menuIcon = <XIcon className="menu" size={35} onClick={handleClick} />
     } else {
         menuIcon = ""
-        menuIcon = <MenuIcon className="menu" size={35} onClick={handleClick} />
+        menuIcon = <MenuIcon className="menu" size={35} onClick={handleClick} id="menuIcon"/>
     }
 
     let overLay = ""

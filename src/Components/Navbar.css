@@ -24,10 +24,6 @@
   color: #166fe5;
 }
 
-.navLinks ul li:active {
-  transform: scale(0.95);
-}
-
 ul li {
   list-style: none !important;
 }
@@ -63,10 +59,6 @@ ul li {
   transition: background-color 0.3s ease;
 }
 
-.menuIcon_writePost p:active {
-  transform: scale(0.95);
-}
-
 .menuIcon_writePost p:hover {
   background-color: #166fe5;
 }
@@ -83,8 +75,4 @@ ul li {
 
 .darkMoodBtn {
   width: fit-content;
-}
-
-.darkMoodBtn:active {
-  transform: scale(0.95);
 }
