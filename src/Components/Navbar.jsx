@@ -27,10 +27,10 @@ const Navbar = ({ handleClick1, backgroundColor }) => {
 
     let menuIcon = ""
     if (click) {
-        menuIcon = <XIcon className="menu" size={35} onClick={handleClick} />
+        menuIcon = <XIcon className="menu" size={35} onClick={handleClick} id="menuIcon" />
     } else {
         menuIcon = ""
-        menuIcon = <MenuIcon className="menu" size={35} onClick={handleClick} id="menuIcon"/>
+        menuIcon = <MenuIcon className="menu" size={35} onClick={handleClick} id="menuIcon" />
     }
 
     let overLay = ""
@@ -52,9 +52,9 @@ const Navbar = ({ handleClick1, backgroundColor }) => {
 
                 <nav className="navLinks">
                     <ul className={menuClass}>
-                        <Link to="/" style={{ textDecoration: "none", color: "black" }} onClick={handleClick}><li>Home</li></Link>
-                        <Link to="/topics" style={{ textDecoration: "none", color: "black" }} onClick={handleClick}><li>Topics</li></Link>
-                        <Link to="/about" style={{ textDecoration: "none", color: "black" }} onClick={handleClick}><li>About</li></Link>
+                        <Link to="/" style={{ textDecoration: "none", color: "black" }} onClick={() => { setClick(false) }}><li>Home</li></Link>
+                        <Link to="/topics" style={{ textDecoration: "none", color: "black" }} onClick={() => { setClick(false) }}><li>Topics</li></Link>
+                        <Link to="/about" style={{ textDecoration: "none", color: "black" }} onClick={() => { setClick(false) }}><li>About</li></Link>
 
                         <div className="darkMoodBtn">
                             <Moon size={30} onClick={handleClick1} className={backgroundColor} id="moon" />
@@ -63,12 +63,12 @@ const Navbar = ({ handleClick1, backgroundColor }) => {
                     </ul>
                     <div className="menuIcon_writePost">
 
-                        <Link to="/writePost" style={{ textDecoration: "none", color: "black" }}><p>Write post</p></Link>
+                        <Link to="/writePost" style={{ textDecoration: "none", color: "black" }} onClick={() => { setClick(false) }}><p>Write post</p></Link>
 
                         {menuIcon}
                     </div>
-                </nav>
-            </div>
+                </nav >
+            </div >
 
         </>
     )

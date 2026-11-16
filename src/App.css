@@ -34,7 +34,7 @@ h2 {
     padding-top: 2rem;
   }
 
-  .navLinks li {
+  .navLinks ul li {
     position: absolute;
     left: 0 !important;
     padding-left: 2rem;
@@ -152,7 +152,6 @@ h2 {
   #menuIcon {
     display: inline-block !important;
   }
-
 }
 
 @media only screen and (min-width: 390px) and (max-width: 601px) {

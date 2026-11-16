@@ -9,7 +9,7 @@
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 4rem;
 }
 
 .navLinks ul li {
