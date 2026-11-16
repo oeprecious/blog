@@ -91,7 +91,7 @@ h2 {
   }
 
   .appMain {
-    padding: 1.6rem 1.5rem;
+    padding: 1.6rem 1.5rem 2.5rem 1.5rem;
   }
 
   .filteredCard {
@@ -214,5 +214,9 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center !important;
+  }
+
+  textarea {
+    min-height: 23vh !important;
   }
 }

@@ -1,10 +1,10 @@
 
 import "./Navbar.css"
-import { MenuIcon, XIcon, Moon } from "lucide-react"
+import { MenuIcon, XIcon } from "lucide-react"
 import { useState } from "react"
 import { Link } from "react-router"
 
-const Navbar = ({ handleClick1, backgroundColor }) => {
+const Navbar = () => {
 
     const [click, setClick] = useState(false)
 
@@ -55,12 +55,8 @@ const Navbar = ({ handleClick1, backgroundColor }) => {
                         <Link to="/" style={{ textDecoration: "none", color: "black" }} onClick={() => { setClick(false) }}><li>Home</li></Link>
                         <Link to="/topics" style={{ textDecoration: "none", color: "black" }} onClick={() => { setClick(false) }}><li>Topics</li></Link>
                         <Link to="/about" style={{ textDecoration: "none", color: "black" }} onClick={() => { setClick(false) }}><li>About</li></Link>
-
-                        <div className="darkMoodBtn">
-                            <Moon size={30} onClick={handleClick1} className={backgroundColor} id="moon" />
-                        </div>
-
                     </ul>
+
                     <div className="menuIcon_writePost">
 
                         <Link to="/writePost" style={{ textDecoration: "none", color: "black" }} onClick={() => { setClick(false) }}><p>Write post</p></Link>
