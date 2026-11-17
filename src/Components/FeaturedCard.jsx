@@ -2,26 +2,28 @@ import "./FeaturedCard.css"
 import { Link } from "react-router"
 import { Trash2 } from "lucide-react"
 
-const FeaturedCardImages = ({ activeTopic, allPosts, deletePost }) => {
-
+const FeaturedCardImages = ({ activeTopic, allPosts, newPosts, deletePost }) => {
 
     const filteredCard = activeTopic === "All" ? allPosts.filter(p => p.id !== 0) : allPosts.filter((item) => item.techStack === activeTopic)
 
-
     return (
-        <>
-            <div className="featuredCardContainer">
-                {filteredCard.map((images) => (
+        <div className="featuredCardContainer">
+            {filteredCard.map((images) => {
+                const isMyPost = newPosts.some(p => String(p.id) === String(images.id))
+
+                return (
                     <Link to={`/post/${images.id}`} key={images.id} className="imageCard" style={{ textDecoration: "none", color: "inherit" }}>
                         <div className="imageCard" style={{ position: "relative" }}>
 
+                            {isMyPost && (
                                 <button className="deleteBtn" onClick={(e) => {
                                     e.preventDefault();
                                     e.stopPropagation();
                                     deletePost(images.id)
                                 }}>
-                                    <Trash2 />
+                                    <Trash2 size={16} />
                                 </button>
+                            )}
 
                             <img src={images.cardImage} alt={images.heading} className="headingImages" />
                             <div className="imageContent">
@@ -32,11 +34,10 @@ const FeaturedCardImages = ({ activeTopic, allPosts, deletePost }) => {
                             </div>
                         </div>
                     </Link>
-
-                ))}
-                {filteredCard.length === 0 && <p>No posts in this topic yet.</p>}
-            </div>
-        </>
+                )
+            })}
+            {filteredCard.length === 0 && <p>No posts in this topic yet.</p>}
+        </div>
     )
 }
 export default FeaturedCardImages

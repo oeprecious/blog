@@ -3,7 +3,7 @@ import FilteredItems from "../Components/FilteredItems"
 import FeaturedCard from "../Components/FeaturedCard"
 import { useState, useEffect } from "react"
 
-const Home = ({allPosts, deletePost}) => {
+const Home = ({allPosts, deletePost, newPosts}) => {
     const [activeTopic, setActiveTopic] = useState("All")
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const Home = ({allPosts, deletePost}) => {
                 <div className="homeCard">
                     <Hero />
                     <FilteredItems activeTopic={activeTopic} setActiveTopic={setActiveTopic} />
-                    <FeaturedCard activeTopic={activeTopic} allPosts={allPosts} deletePost={deletePost}/>
+                    <FeaturedCard activeTopic={activeTopic} allPosts={allPosts} deletePost={deletePost} newPosts={newPosts}/>
                 </div>
             </div>
         </>

@@ -94,7 +94,7 @@ const App = () => {
 
         <main className="appMain">
           <Routes>
-            <Route path="/" element={<Home allPosts={allPosts} deletePost={deletePost} />} />
+            <Route path="/" element={<Home allPosts={allPosts} deletePost={deletePost} newPosts={newPosts}/>} />
             <Route path="/about" element={<About />} />
             <Route path="/topics" element={<Topics allPosts={allPosts} deletePost={deletePost} />} />
             <Route path="/writePost" element={<WritePost addPosts={addPosts} addDrafts={addDrafts} />} />
