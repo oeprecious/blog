@@ -4,7 +4,7 @@ A React blog where I write down what I learn while building for the web: HTML, C
 
 This is a **practice project**. I built it to learn how a real blog works like sharing data, dynamic pages, forms, and saving things in the browser, with no backend.
 
-**Live site:** (https://oeprecious.github.io/blog/)
+**Live site:** https://oeprecious.github.io/blog/
 
 ![Topic page on desktop](Screenshots/desktop.png)
 
