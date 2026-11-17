@@ -33,7 +33,7 @@ export const posts = [
     
     3. Prototype: I linked the screens in Figma so I could click the flow. I saw that my checkout had too many fileds, so I simplified it.
     
-    4. Code: I exported the assets and built it in React. Because the layout as already decided, I just focused on state, form validation, responsive design with media query, and deployment to GitHub page.` },
+    4. Code: I exported the assets and built it in React. Because the layout as already decided, I just focused on state, form validation, responsive design with media query, and deployment to GitHub page.`},
 
     {
         id: 3, techStack: "JAVASCRIPT", heading: "A beginner guide to localStorage", cardPara: "Saving notes in the browser so they stay after a refresh", date: "Oct 31 • 4 min read", cardImage: card3Image, fullContent: `I wanted my notes to stay after refresh. Without localStorage, everything disappeared.

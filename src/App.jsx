@@ -33,15 +33,15 @@ const App = () => {
   //Function thats add Posts
   const addPosts = (heading, techStack, cardImage, fullContent) => {
 
-      const wordCount = fullContent.trim().split(/\s+/).length
-      const readTime = Math.max(1, Math.ceil(wordCount / 200))
+    const wordCount = fullContent.trim().split(/\s+/).length
+    const readTime = Math.max(1, Math.ceil(wordCount / 200))
 
     const post = {
       id: Date.now(),
       heading: heading,
       cardPara: `${fullContent.slice(0, 80)}...`,
       techStack: techStack,
-      date: `${new Date().toLocaleDateString("en-US", {month: "short", day: "numeric"})} • ${readTime} min read`,
+      date: `${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" })} • ${readTime} min read`,
       cardImage: cardImage,
       fullContent: fullContent
     }
@@ -67,6 +67,15 @@ const App = () => {
     setDrafts(prev => [...prev, draft])
   }
 
+  // Delete post 
+  const deletePost = (id) => {
+    const confirmDelete = window.confirm("Delete this post?")
+    if (!confirmDelete) return
+
+    setNewPosts(prev => prev.filter(p => String(p.id) !== String(id)))
+    setDrafts(prev => prev.filter(p => String(p.id) !== String(id)))
+  }
+
 
   useEffect(() => {
     try {
@@ -75,21 +84,21 @@ const App = () => {
     }
   }, [drafts])
 
-  
+
   return (
     <>
 
-      <div style={{minHeight: "100vh" }} className="appWrapper">
+      <div style={{ minHeight: "100vh" }} className="appWrapper">
 
         <Navbar />
 
         <main className="appMain">
           <Routes>
-            <Route path="/" element={<Home allPosts={allPosts} />} />
+            <Route path="/" element={<Home allPosts={allPosts} deletePost={deletePost} />} />
             <Route path="/about" element={<About />} />
-            <Route path="/topics" element={<Topics allPosts={allPosts} />} />
+            <Route path="/topics" element={<Topics allPosts={allPosts} deletePost={deletePost} />} />
             <Route path="/writePost" element={<WritePost addPosts={addPosts} addDrafts={addDrafts} />} />
-            <Route path="/post/:id" element={<Post allPosts={allPosts} />} />
+            <Route path="/post/:id" element={<Post allPosts={allPosts} deletePost={deletePost} />} />
           </Routes>
         </main>
       </div>

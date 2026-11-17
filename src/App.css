@@ -156,6 +156,10 @@ h2 {
   #menuIcon {
     display: inline-block !important;
   }
+
+  .deleteBtn {
+    opacity: 1 !important;
+  }
 }
 
 @media only screen and (min-width: 390px) and (max-width: 601px) {
