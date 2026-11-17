@@ -32,12 +32,16 @@ const App = () => {
 
   //Function thats add Posts
   const addPosts = (heading, techStack, cardImage, fullContent) => {
+
+      const wordCount = fullContent.trim().split(/\s+/).length
+      const readTime = Math.max(1, Math.ceil(wordCount / 200))
+
     const post = {
       id: Date.now(),
       heading: heading,
       cardPara: `${fullContent.slice(0, 80)}...`,
       techStack: techStack,
-      date: new Date().toLocaleDateString(),
+      date: `${new Date().toLocaleDateString("en-US", {month: "short", day: "numeric"})} • ${readTime} min read`,
       cardImage: cardImage,
       fullContent: fullContent
     }
