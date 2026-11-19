@@ -45,7 +45,7 @@ const Topics = ({allPosts}) => {
                             <div className="card">
                                 <span style={{ color: "#1877F2", width: "fitContent" }}>{item.icon}</span>
                                 <h2>{item.topic}</h2>
-                                <p>{item.tag} posts</p>
+                                <p>{item.tag} posts </p>
                                 <p>{count} posts</p>
                             </div>
                         </Link>

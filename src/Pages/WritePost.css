@@ -32,15 +32,13 @@
   background-color: var(--btn-primary-bg);
   cursor: pointer;
   font-size: 1.7rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 #publishBtn:hover {
-  background-color: var( --tertairy-color);
-}
-
-#publishBtn:active{
-  transform: scale(0.95);
+  background-color: var(--tertairy-color);
 }
 
 #saveDraftBtn {
@@ -53,15 +51,9 @@
     background-color 0.3s ease,
     color 0.3s ease;
   cursor: pointer;
-   font-size: 1.7rem;
-   transition: transform 0.3s ease;
+  font-size: 1.7rem;
+  transition: transform 0.3s ease;
 }
-
-#saveDraftBtn:active{
- transform: scale(0.95);
-}
-
-
 
 .formBtn {
   display: flex;
